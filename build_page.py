@@ -55,7 +55,7 @@ def section_navigation():
     links = ''.join(f'<a href="#{target}" data-audience="{view}">{icon(symbol)}{b(en,zh)}</a>' for view, entries in sections.items() for target, symbol, en, zh in entries)
     return f'<nav class="section-nav" {attrs("On this page","本页导航")}>{links}</nav>'
 
-old = (ROOT/'dist/index.html').read_text(encoding='utf-8')
+old = (ROOT/'index.html').read_text(encoding='utf-8')
 symbols = re.search(r'<svg class="icon-library".*?</svg>', old, re.S).group(0)
 if 'id="i-mail"' not in symbols:
     symbols=symbols.replace('</svg>', '''
@@ -283,5 +283,5 @@ page=f'''<!DOCTYPE html>
 </body>
 </html>
 '''
-(ROOT/'dist/index.html').write_text(page,encoding='utf-8')
+(ROOT/'index.html').write_text(page,encoding='utf-8')
 print('Bilingual CV page built.')
