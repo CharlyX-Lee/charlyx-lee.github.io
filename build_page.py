@@ -105,7 +105,7 @@ research = [
       title='Benchmarking Visual-Inertial Odometry in Subterranean Environments Under Sensor Degradation, Miscalibration, and Dynamic Occlusion',
       authors='Yueying Zhu, <strong>Xiang Li</strong>, Thien-Minh Nguyen, Xuehe Wang, Shenghai Yuan',
       links=[('Paper','论文','https://arxiv.org/abs/2609.18628')]),
- dict(id='gsuvce', venue='ICRA 2026', status=('Accepted','已接收'),
+ dict(id='gsuvce', venue='ICRA 2026', status=('Published','已发表'),
       title='GS-UVCE: Gaussian Splatting-Driven Unsupervised Visual Consistency Enhancement for Underwater 3D Scene Reconstruction',
       authors='<strong>Xiang Li</strong>, Chi Li, Yiming Xu, Yan Zhuang',
       links=[('Paper','论文','https://ieeexplore.ieee.org/document/11696993')]),
