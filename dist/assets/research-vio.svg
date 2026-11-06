@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="200" viewBox="0 0 320 200" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="320" y2="200" gradientUnits="userSpaceOnUse"><stop stop-color="#111c2f"/><stop offset="1" stop-color="#08111d"/></linearGradient>
+    <radialGradient id="depth"><stop stop-color="#14525c" stop-opacity=".22"/><stop offset="1" stop-color="#14525c" stop-opacity="0"/></radialGradient>
+    <linearGradient id="trail" x1="43" y1="148" x2="211" y2="83" gradientUnits="userSpaceOnUse"><stop stop-color="#77e6a9"/><stop offset="1" stop-color="#53dbe1"/></linearGradient>
+  </defs>
+  <rect width="320" height="200" rx="10" fill="url(#bg)"/>
+  <ellipse cx="210" cy="82" rx="110" ry="85" fill="url(#depth)"/>
+  <g stroke="#6d9aa8" stroke-width=".7">
+    <path d="M24 22h273v133H24Z" stroke-opacity=".19"/><path d="M82 41h194v94H82Z" stroke-opacity=".3"/><path d="M127 56h132v64H127Z" stroke-opacity=".4"/><path d="M159 66h88v42h-88Z" stroke-opacity=".44"/><path d="M181 73h56v27h-56Z" stroke-opacity=".4"/><path d="M195 78h35v17h-35Z" stroke-opacity=".32"/>
+    <path d="m24 22 186 62m87-62-87 62M24 155l186-71m87 71-87-71M24 88l186-4m87 4-87-4M160 22l50 62m-50 71 50-71" stroke-opacity=".22"/>
+  </g>
+  <path d="m24 155 58-20 45-15 32-12 22-8 14-5" stroke="#a8b7dc" stroke-opacity=".18" stroke-width="1.3"/>
+  <path d="M43 150c21-4 22-15 44-13 15 1 24-18 42-18 13 0 23-14 37-15 17-1 19-13 44-20" stroke="#53dba4" stroke-opacity=".07" stroke-width="10" stroke-linecap="round"/>
+  <path d="M43 150c14-3 19-8 27-11m15-2c15 2 25-18 44-18 8 0 16-7 24-11m15-4c15-2 19-13 42-20" stroke="url(#trail)" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="m72 139 5-5 3 6 4-3m70-29 5-6 3 6 5-4" stroke="#e7a67a" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#94e8c5"><circle cx="43" cy="150" r="2.6"/><circle cx="101" cy="132" r="2.1"/><circle cx="128" cy="119" r="2.1"/><circle cx="184" cy="96" r="1.8"/><circle cx="211" cy="84" r="2.4"/></g>
+  <g stroke="#c69b81" stroke-width=".7" stroke-opacity=".5"><path d="m75 126-3-4m8 3 1-5m72-26-3-4m10 3 1-5"/></g>
+  <g transform="translate(211 84)" stroke-width="1.2"><path d="M0 0h13" stroke="#72c8e1"/><path d="M0 0v-13" stroke="#b4a1e0"/><path d="M0 0l-8 8" stroke="#9cddb4"/><circle r="7" stroke="#80cbbf" stroke-width=".7" stroke-opacity=".3"/></g>
+  <g stroke="#96c2c8" stroke-width=".8" opacity=".7"><rect x="35" y="117" width="13" height="10" rx="2" fill="#17303b"/><path d="m48 120 4-2v8l-4-2m-7 3v6m-4 0h8"/></g>
+  <path d="M22 177h21" stroke="#60cddd"/><text x="51" y="180" font-family="monospace" font-size="8" letter-spacing="2" fill="#9ab7ce">VIO</text>
+  <path d="M281 176h16m-8-8v16" stroke="#7292aa" stroke-opacity=".4" stroke-width=".7"/>
+</svg>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#070b16">
+  <title>Xiang Li · CV</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <style>
+    :root { color-scheme: dark; font-family: Inter, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: #070b16; color: #ecf1fb; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; }
+    html[lang="en"] .lang-zh, html[lang="zh-CN"] .lang-en { display: none; }
+    .cv-header { min-height: 76px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; padding: 18px 30px; border-bottom: 1px solid #9db7db29; background: #0c1221; }
+    .cv-title { margin: 0 auto 0 0; font-size: 16px; font-weight: 600; letter-spacing: .2px; }
+    .cv-title small { margin-left: 10px; color: #a0adc3; font-size: 12px; font-weight: 400; }
+    a { color: #8ee9ef; text-decoration: none; font-size: 12px; }
+    a:hover { color: #fff; }
+    button { padding: 6px 10px; border: 1px solid #6de6ed48; border-radius: 5px; color: #b4f3f5; background: #6de6ed09; cursor: pointer; }
+    a:focus-visible, button:focus-visible { outline: 2px solid #6de6ed; outline-offset: 5px; }
+    main { height: calc(100dvh - 77px); min-height: 420px; }
+    .pdf-viewer { display: block; width: 100%; height: 100%; border: 0; background: #20242c; }
+    .pdf-fallback { padding: 40px 24px; text-align: center; color: #b3c0d5; line-height: 1.8; }
+    @media (max-width: 600px) {
+      .cv-header { gap: 14px 20px; padding: 16px 18px; }
+      .cv-title { flex-basis: 100%; }
+      .cv-title small { display: inline-block; }
+      main { height: calc(100dvh - 113px); }
+    }
+  </style>
+</head>
+<body>
+  <header class="cv-header">
+    <h1 class="cv-title">Xiang Li <small><span class="lang-en">Curriculum Vitae · Chinese PDF</span><span class="lang-zh">个人简历 · 中文 PDF</span></small></h1>
+    <a id="home-link" href="index.html"><span class="lang-en">← Back to homepage</span><span class="lang-zh">← 返回主页</span></a>
+    <a class="pdf-link" href="assets/Xiang-Li-CV.pdf" target="_blank" rel="noopener"><span class="lang-en">Open PDF ↗</span><span class="lang-zh">打开 PDF ↗</span></a>
+    <button id="cv-language" type="button" aria-label="Switch to Chinese">中文</button>
+  </header>
+  <main>
+    <object class="pdf-viewer" id="cv-document" data="assets/Xiang-Li-CV.pdf#view=FitH" type="application/pdf" aria-label="Xiang Li's CV in Chinese">
+      <div class="pdf-fallback">
+        <p><span class="lang-en">Your browser cannot display this PDF here.</span><span class="lang-zh">当前浏览器无法在此处展示 PDF。</span></p>
+        <a class="pdf-link" href="assets/Xiang-Li-CV.pdf" target="_blank" rel="noopener"><span class="lang-en">Open the CV in a new tab ↗</span><span class="lang-zh">在新标签页查看简历 ↗</span></a>
+      </div>
+    </object>
+  </main>
+  <script>
+    (() => {
+      const toggle = document.getElementById('cv-language');
+      const view = ['campus', 'experience'].includes(new URLSearchParams(window.location.search).get('view')) ? 'campus' : 'research';
+      const homeUrl = new URL('index.html', window.location.href);
+      function setLanguage(language) {
+        const isEnglish = language === 'en';
+        document.documentElement.lang = language;
+        document.title = isEnglish ? 'Xiang Li · CV' : '李响 · 个人简历';
+        toggle.textContent = isEnglish ? '中文' : 'EN';
+        toggle.setAttribute('aria-label', isEnglish ? 'Switch to Chinese' : '切换为英文');
+        homeUrl.searchParams.set('lang', language);
+        homeUrl.searchParams.set('view', view);
+        document.getElementById('home-link').href = homeUrl.href;
+        document.getElementById('cv-document').setAttribute('aria-label', isEnglish ? "Xiang Li's CV in Chinese" : '李响的中文简历');
+      }
+      toggle.addEventListener('click', () => setLanguage(document.documentElement.lang === 'en' ? 'zh-CN' : 'en'));
+      setLanguage(new URLSearchParams(window.location.search).get('lang') === 'zh-CN' ? 'zh-CN' : 'en');
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="200" viewBox="0 0 320 200" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="320" y2="200" gradientUnits="userSpaceOnUse"><stop stop-color="#151b30"/><stop offset="1" stop-color="#08111d"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#8672b6" stop-opacity=".23"/><stop offset="1" stop-color="#8672b6" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="320" height="200" rx="10" fill="url(#bg)"/>
+  <ellipse cx="151" cy="85" rx="123" ry="88" fill="url(#glow)"/>
+  <path d="m66 28 29-8 42 6 27-3 35 17-5 30 12 21-12 29-28 14-35-3-22 17-31-8-15-25 4-27-11-24Z" fill="#25303e" fill-opacity=".58" stroke="#8898b2" stroke-opacity=".5"/>
+  <g stroke="#c2b6d4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M90 46v28m-9-18 18 12m-17 6 16-24 M125 47l-9 17 19-2m-10-15 1 29 M160 47l-10 10 10 10 10-10-10-10m0 20v10"/>
+    <path d="M88 92v27m-9-20 18 0m-14 9 10 11m-10 0 10-11 M124 90l-8 10 17 10-17 10m8-30 1 30 M154 94l16 1-8 12-9-13m9 13v15m-7-7h14"/>
+  </g>
+  <g stroke="#70d7db" stroke-width=".8" stroke-opacity=".8">
+    <rect x="74" y="40" width="31" height="41" rx="2"/><rect x="110" y="40" width="31" height="41" rx="2"/><rect x="145" y="40" width="31" height="41" rx="2"/>
+    <rect x="74" y="85" width="31" height="42" rx="2"/><rect x="110" y="85" width="31" height="42" rx="2"/><rect x="145" y="85" width="31" height="42" rx="2"/>
+    <path d="M205 85h23m-5-5 5 5-5 5"/>
+  </g>
+  <g stroke="#a895d3" stroke-width="1" stroke-opacity=".7">
+    <rect x="239" y="39" width="57" height="91" rx="5" fill="#121c2c"/>
+    <path d="M250 54h34m-34 15h27m-27 15h34m-34 15h23m-23 15h31"/>
+  </g>
+  <path d="M57 82h148" stroke="#86e3e5" stroke-opacity=".16" stroke-width="9"/>
+  <path d="M57 82h148" stroke="#86e3e5" stroke-opacity=".7" stroke-width=".8"/>
+  <path d="M22 177h21" stroke="#60cddd"/><text x="51" y="180" font-family="monospace" font-size="8" letter-spacing="2" fill="#9ab7ce">OCR</text>
+  <path d="M281 176h16m-8-8v16" stroke="#7292aa" stroke-opacity=".4" stroke-width=".7"/>
+</svg>

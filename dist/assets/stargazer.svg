@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="680" viewBox="0 0 1600 680" preserveAspectRatio="xMidYMax slice" fill="none">
+  <defs>
+    <linearGradient id="horizon" x1="0" y1="424" x2="0" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#172547" stop-opacity="0"/>
+      <stop offset=".4" stop-color="#243255" stop-opacity=".26"/>
+      <stop offset="1" stop-color="#060b17" stop-opacity=".94"/>
+    </linearGradient>
+    <linearGradient id="distant" x1="800" y1="470" x2="800" y2="680" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0c152b"/>
+      <stop offset="1" stop-color="#050911"/>
+    </linearGradient>
+    <linearGradient id="rock" x1="1010" y1="478" x2="930" y2="680" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#10172a"/>
+      <stop offset=".45" stop-color="#080d1c"/>
+      <stop offset="1" stop-color="#030710"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="780" y1="540" x2="1240" y2="570" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6387d7" stop-opacity="0"/>
+      <stop offset=".48" stop-color="#70d6ee" stop-opacity=".5"/>
+      <stop offset=".7" stop-color="#ac8fe6" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#785cda" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="coat" x1="990" y1="417" x2="1020" y2="466" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111827"/>
+      <stop offset="1" stop-color="#050911"/>
+    </linearGradient>
+  </defs>
+
+  <!-- A distant skyline sits below the clear sky. -->
+  <path fill="url(#horizon)" d="M0 424h1600v256H0z"/>
+  <g fill="#111a30" opacity=".76">
+    <path d="M0 554h47v-17h21v-32h8v-6h3v-21h2v21h3v6h9v48h24v-28h24v-43h21v-25h2v25h15v66h27v-29h14v-35h11v-4h15v35h11v39h34v-13h16v-23h35v46h19v116H0z"/>
+    <path d="M1248 558h28v-19h14v-43h12v-17h2v17h15v46h16v-29h25v-44h4v-13h2v13h6v44h15v34h24v-17h9v-38h24v-12h3v12h8v64h23v-40h20v-35h16v35h8v27h13v-58h6v-33h2v33h12v58h17v-12h22v143h-352z"/>
+  </g>
+  <g stroke-width="1" opacity=".3">
+    <path stroke="#00e7ef" d="M78 509v20m66-36h10m-5 6h5m-34 38h11m107-42v17m106 29h7m945-31v18m69-48v13m72 9h9m76-14v21m-49 37h8"/>
+    <path stroke="#d661f0" d="M173 501v22m55 16h8m73-7h10m988-20h6m46 18h8m92-8v13m95-41h8"/>
+  </g>
+  <path d="M0 584 107 565 170 574 258 548 336 569 416 553 493 572 579 548 672 559 749 545 821 565 901 538 992 552 1087 541 1159 566 1245 548 1342 564 1420 545 1514 569 1600 553V680H0Z" fill="url(#distant)"/>
+  <path d="m0 582 106-16 65 9 87-25m978 2 108 14 74-17 95 22 87-15" stroke="#617cbd" stroke-opacity=".12"/>
+
+  <!-- Broken stone planes frame a single high lookout. -->
+  <path d="M0 630 83 612 171 626 269 594 359 613 468 579 557 602 635 576 702 597 781 550 834 548 888 512 940 510 979 486 1019 481 1056 494 1083 489 1122 511 1144 544 1212 560 1276 597 1345 580 1411 610 1497 601 1600 622V680H0Z" fill="url(#rock)"/>
+  <path d="m781 550 53-2 54-36 52-2 39-24 40-5 37 13 27-5 39 22 22 33 68 16 64 37" stroke="url(#rim)" stroke-width="1.25"/>
+  <path d="m887 513 45 30-18 48 59 89H783l51-132Zm132-31-22 44 36 39-30 115h120l-24-104 45-32-22-33-39-22-27 5Z" fill="#131c30" opacity=".3"/>
+  <path d="m941 511-9 32-69 41m156-101-22 43 36 39-30 69m80-144 16 86 45-32m-320 50-41 39 12 45m447-80-28 41 40 29" stroke="#34445e" stroke-opacity=".18"/>
+  <path d="m1145 545 36 61 95-9-64-37Zm-677 34-39 51 88 50h111l-71-78Z" fill="#172037" opacity=".18"/>
+
+  <!-- Head tilted towards the upper-left sky; coat and two separate legs. -->
+  <g>
+    <path d="m1001 408 2 10 9 3-2-15Z" fill="#0a101c"/>
+    <path d="M1001 391c5-2 12 1 14 7 1 4 0 9-3 12-3 3-7 3-10 0l-2-3-4-1 1-3-3-3 3-3c0-3 1-5 4-6Z" fill="#0c1321"/>
+    <path d="M998 396c2-4 8-6 12-3" stroke="#9bb7d3" stroke-opacity=".43" stroke-width=".85" stroke-linecap="round"/>
+    <path d="m1003 417-11 6-7 21-3 13 4 2 6-13 5-13-5 33 12 3 15-3-5-29 6 12 4 9 4-2-5-14-8-20-7-4Z" fill="url(#coat)"/>
+    <path d="m994 464 2 17-2 6h9l1-9 3-12 3 12 3 8h9l-5-7-2-16Z" fill="#050911"/>
+    <path d="m982 456-1 5 2 2 3-2 1-3m37-1 1 5 3 1 1-3-2-5" fill="#0e1623"/>
+    <path d="m1002 418-10 6-6 20-3 11m13 13 1 11m5-61 6 8-4 29" stroke="#83b5d1" stroke-opacity=".22" stroke-width=".8" stroke-linecap="round"/>
+    <path d="m1011 420 5 6 6 18" stroke="#a57ac8" stroke-opacity=".16" stroke-width=".8" stroke-linecap="round"/>
+  </g>
+  <path d="m958 498 25-10 17 3 21-5 11 3" stroke="#89bcd6" stroke-opacity=".2" stroke-width=".8"/>
+</svg>

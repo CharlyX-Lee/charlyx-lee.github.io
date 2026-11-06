@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="200" viewBox="0 0 320 200" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="320" y2="200" gradientUnits="userSpaceOnUse"><stop stop-color="#101d32"/><stop offset="1" stop-color="#070e1b"/></linearGradient>
+    <linearGradient id="cone" x1="63" y1="100" x2="156" y2="90" gradientUnits="userSpaceOnUse"><stop stop-color="#53dcff" stop-opacity=".02"/><stop offset="1" stop-color="#53dcff" stop-opacity=".12"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#44d8ed" stop-opacity=".18"/><stop offset="1" stop-color="#44d8ed" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="320" height="200" rx="10" fill="url(#bg)"/>
+  <ellipse cx="234" cy="85" rx="100" ry="78" fill="url(#glow)"/>
+  <g stroke="#41617c" stroke-opacity=".25" stroke-width=".7">
+    <path d="m20 155 110-52h99l80 52H20Zm17-8h260M58 137h223M81 127h184m-162-10h146M64 155l86-52m-38 52 57-52m-8 52 27-52m22 52-3-52m53 52-34-52"/>
+    <path d="M24 155V57l110-38h95l75 38v98M24 57h280M134 19v84m95-84v84" stroke-opacity=".12"/>
+  </g>
+  <g stroke="#6395b0" stroke-width=".8">
+    <path d="m111 120 26-13 21 10v-46l-22-9-25 11v47Zm0-47 25 11 22-13m-22 13v23" fill="#283650" fill-opacity=".12"/>
+    <path d="m183 136 23-10 20 13v-39l-20-11-23 10v37Zm0-37 23 12 20-11m-20 11v15" stroke-opacity=".6"/>
+    <path d="m246 115 18-8 20 14V93l-20-12-18 8v26Zm0-26 18 12 20-8m-20 8v6" stroke-opacity=".4"/>
+  </g>
+  <path d="m64 103 79-48 13 65Z" fill="url(#cone)" stroke="#56cce9" stroke-opacity=".22" stroke-width=".7"/>
+  <path d="M66 102c29-8 36-56 71-56 35 0 27 50 59 49 28-1 27-24 57-24" stroke="#8fe8eb" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="2 5"/>
+  <g fill="#7ce1e8"><circle cx="94" cy="77" r="2"/><circle cx="141" cy="47" r="2"/><circle cx="190" cy="94" r="2"/><circle cx="223" cy="84" r="2"/></g>
+  <g transform="translate(56 105)" stroke="#a5e8f4" stroke-width="1.3">
+    <path d="m-13-8 26 16m0-16L-13 8"/><ellipse cx="-14" cy="-9" rx="8" ry="2.5"/><ellipse cx="14" cy="-9" rx="8" ry="2.5"/><ellipse cx="-14" cy="9" rx="8" ry="2.5"/><ellipse cx="14" cy="9" rx="8" ry="2.5"/><path d="m-6-3 6-3 6 3v7L0 7l-6-3Z" fill="#142f45"/><path d="M0 7v5m-4-1h8"/>
+  </g>
+  <g transform="translate(256 70)" stroke="#beabf5">
+    <circle r="12" stroke-opacity=".3"/><circle r="6" stroke-width="1.1"/><path d="M-17 0h6m22 0h6M0-17v6m0 22v6" stroke-opacity=".6"/><circle r="1.5" fill="#d5c8ff"/>
+  </g>
+  <path d="M22 177h21" stroke="#60cddd"/><text x="51" y="180" font-family="monospace" font-size="8" letter-spacing="2" fill="#9ab7ce">GOALFLY</text>
+  <path d="M281 176h16m-8-8v16" stroke="#7292aa" stroke-opacity=".4" stroke-width=".7"/>
+</svg>

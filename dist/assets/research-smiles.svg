@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="200" viewBox="0 0 320 200" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="320" y2="200" gradientUnits="userSpaceOnUse"><stop stop-color="#121d30"/><stop offset="1" stop-color="#08111d"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#6958a6" stop-opacity=".25"/><stop offset="1" stop-color="#6958a6" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="320" height="200" rx="10" fill="url(#bg)"/>
+  <ellipse cx="166" cy="89" rx="130" ry="85" fill="url(#glow)"/>
+  <g stroke="#738da7" stroke-opacity=".15" stroke-width=".7"><path d="M23 45h273M23 78h273M23 111h273M23 144h273M59 23v129M110 23v129M161 23v129M212 23v129M263 23v129"/></g>
+  <g stroke="#8eb4ce" stroke-opacity=".45" stroke-width="1"><path d="m60 48 79 35m-79 35 79-35m19-39-19 39m76-31-76 31m76 41-76-41m10 61-10-61"/></g>
+  <g fill="#142739" stroke="#86cbd4" stroke-width="1.2"><circle cx="60" cy="48" r="13"/><circle cx="60" cy="118" r="13"/><circle cx="158" cy="44" r="10"/><circle cx="215" cy="52" r="12"/><circle cx="215" cy="124" r="12"/><circle cx="149" cy="144" r="9"/></g>
+  <g stroke="#95c9df" stroke-opacity=".7" stroke-width="1"><path d="M54 45h12m-12 5h9M54 115h12m-12 5h9M210 49h10m-10 5h7M210 121h10m-10 5h7"/></g>
+  <circle cx="139" cy="83" r="27" fill="#17233b" stroke="#b6a1e2" stroke-opacity=".6"/>
+  <circle cx="139" cy="83" r="35" stroke="#b6a1e2" stroke-opacity=".13"/>
+  <path d="M119 93c8 0 10-28 20-28s12 28 20 28" stroke="#d2b5ef" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M119 94h40" stroke="#b6a1e2" stroke-opacity=".35"/>
+  <path d="M251 53v85h45" stroke="#849ab8" stroke-opacity=".35"/>
+  <path d="M255 129c13 0 10-42 20-42s9 42 18 42" stroke="#79d9d1" stroke-width="1.2"/>
+  <path d="M255 129c7 0 6-56 13-56s8 56 25 56" stroke="#b4a1dc" stroke-opacity=".7" stroke-width="1.1" stroke-dasharray="3 3"/>
+  <path d="M22 177h21" stroke="#60cddd"/><text x="51" y="180" font-family="monospace" font-size="8" letter-spacing="2" fill="#9ab7ce">BAYESIAN INFERENCE</text>
+  <path d="M281 176h16m-8-8v16" stroke="#7292aa" stroke-opacity=".4" stroke-width=".7"/>
+</svg>
