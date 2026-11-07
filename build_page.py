@@ -24,7 +24,10 @@ universities = {
     'Nanyang Technological University': ('https://www.ntu.edu.sg/', 'https://www.ntu.edu.sg/'),
     'Nanjing University': ('https://www.nju.edu.cn/en/', 'https://www.nju.edu.cn/'),
     'School of Computer Science and Technology': ('https://cs.dlut.edu.cn/ENGLISH/Home.htm', 'https://cs.dlut.edu.cn/'),
-    'School of International Information and Software': ('https://drise.dlut.edu.cn/ywwENGLISH.htm', 'https://drise.dlut.edu.cn/'),
+    'School of Software and International School of Information Science and Engineering': ('https://drise.dlut.edu.cn/ywwENGLISH.htm', 'https://drise.dlut.edu.cn/'),
+    'Midea Group (CRC)': ('https://www.midea.com.cn/zh', 'https://www.midea.com.cn/zh'),
+    'BIXOCEAN': ('https://bixocean.com/en', 'https://bixocean.com/'),
+    'Navi+': ('http://www.navi-plus.com/', 'http://www.navi-plus.com/'),
 }
 
 def university(en, zh):
@@ -43,7 +46,7 @@ def email_widget():
 
 def view_switch():
     return f'''<div class="profile-view-switch" role="group" {attrs('Choose profile view','选择主页版本')}>
-      <button class="view-button" type="button" data-view-select="research" aria-pressed="true">{icon('flask')}{b('Research','科研')}</button>
+      <button class="view-button" type="button" data-view-select="research" aria-pressed="true">{icon('flask')}{b('Research','科研经历')}</button>
       <button class="view-button" type="button" data-view-select="campus" aria-pressed="false">{icon('people')}{b('Campus','校园经历')}</button>
     </div>'''
 
@@ -138,9 +141,9 @@ research_experience = [
  ('Oct 2025 – May 2026', ('Research Assistant · Underwater 3D Vision','科研助理 · 水下三维视觉'), ('Peking University','北京大学')),
 ]
 industry_experience = [
- ('Jun – Sep 2026', ('Embodied Agent Algorithms Intern','人形机器人具身 Agent 算法实习'), ('Midea Central Research Institute','美的中央研究院')),
- ('Apr – Jun 2026', ('Underwater Robotics Simulation Intern','水下机器人具身智能仿真算法实习'), ('Bianji Lingyu','边际领域')),
- ('Mar 2025 – Apr 2026', ('Multi-Robot Navigation Algorithms Intern','空地协同机器人导航算法实习'), ('Dalian Hangjia Robotics','大连航佳机器人')),
+ ('Jun – Sep 2026', ('Embodied AI Algorithm Engineer','具身智能算法工程师'), ('Midea Group (CRC)','美的集团（中央研究院）')),
+ ('Apr – Jun 2026', ('Embodied AI Algorithm Engineer','具身智能算法工程师'), ('BIXOCEAN','边际领域')),
+ ('Mar 2025 – Apr 2026', ('Navigation Algorithm Engineer','导航算法工程师'), ('Navi+','大连航佳机器人')),
 ]
 
 competition_groups = [
@@ -181,14 +184,22 @@ def tenure_group(title, items):
     return f'<div class="tenure-group"><h3 class="award-group-title">{b(*title)}</h3><ul class="tenure-list">{rows}</ul></div>'
 
 memberships = [
-    ('IEEE Graduate Student Member', 'IEEE 学生会员'),
-    ('IEEE RAS Student Member', 'IEEE RAS 学生会员'),
+    ('IEEE Graduate Student Member', 'IEEE 研究生会员'),
+    ('IEEE RAS Graduate Student Member', 'IEEE RAS 研究生会员'),
     ('CAAI Student Member', 'CAAI 学生会员'),
     ('CCF Student Member', 'CCF 学生会员'),
     ('CSIG Student Member', 'CSIG 学生会员'),
     ('CAA Provisional Member', 'CAA 预备会员'),
 ]
-reviewing = ['ICRA 2026, 2027', 'IROS 2026', 'ICARCV 2026', 'RA-L', 'TMM', 'T-FR']
+reviewing = [
+    ('ICRA 2026', 'https://2026.ieee-icra.org/'),
+    ('ICRA 2027', 'https://2027.ieee-icra.org/'),
+    ('IROS 2026', 'https://2026.ieee-iros.org/'),
+    ('ICARCV 2026', 'https://www.carvs-icarcv.org/'),
+    ('RA-L', 'https://www.ieee-ras.org/publications/ra-l/'),
+    ('TMM', 'https://signalprocessingsociety.org/publications-resources/ieee-transactions-multimedia'),
+    ('T-FR', 'https://www.ieee-ras.org/publications/t-fr/'),
+]
 
 page=f'''<!DOCTYPE html>
 <html lang="en">
@@ -208,6 +219,10 @@ page=f'''<!DOCTYPE html>
       <img class="nightscape-art" src="assets/nightscape.webp" alt="" width="2172" height="724" loading="eager">
       <div class="nightscape-aurora"></div><div class="nightscape-grid"></div>
       <div class="nightscape-stars">{'<i></i>' * 12}</div><div class="nightscape-meteor">{'<i></i>' * 3}</div>
+      <div class="nightscape-quote">
+        <span class="lang-en" lang="en"><span class="quote-line">Look to the stars and dream.</span><span class="quote-line">Face setbacks undaunted.</span></span>
+        <span class="lang-zh" lang="zh-CN"><span class="quote-line">仰望星空树理想，</span><span class="quote-line">直面挫折不彷徨。</span></span>
+      </div>
     </div>
   <canvas id="starfield" aria-hidden="true"></canvas><div class="nebula" aria-hidden="true"></div><div class="scanlines" aria-hidden="true"></div><div class="scan-beam" aria-hidden="true"></div>
   {symbols}
@@ -226,8 +241,8 @@ page=f'''<!DOCTYPE html>
       <p class="profile-location">{b('Dalian, China','中国 · 大连')}</p>
       <p class="profile-mbti">MBTI · ENFJ-T</p>
       <nav class="social-links" {attrs('Social and academic profiles','社交与学术主页')}>{social_html}</nav>
-      <div class="profile-actions">{email_widget()}<a id="cv-preview" class="cv-button" href="cv.html?lang=en" target="_blank" rel="noopener" {attrs('View Chinese CV in a new tab','在新标签页查看中文简历')}>{icon('document')}{b('View CV · Chinese PDF','查看简历 · 中文 PDF')}</a></div>
-      <div class="profile-motto"><p>{b('Steadfast effort. A life lived without complacency.','一以贯之的努力，不得懈怠的人生。')}</p></div>
+      <div class="profile-actions"><a id="cv-preview" class="cv-button" href="cv.html?lang=en" target="_blank" rel="noopener" {attrs('View CV in a new tab','在新标签页查看简历')}>{icon('document')}{b('View CV','查看简历')}</a></div>
+      <div class="profile-motto"><p><span class="lang-en" lang="en"><span class="motto-line">Steadfast effort.</span><span class="motto-line">A life lived without complacency.</span></span><span class="lang-zh" lang="zh-CN"><span class="motto-line">一以贯之的努力，</span><span class="motto-line">不得懈怠的人生。</span></span></p></div>
     </aside>
     <main class="content">
       <span id="view-status" class="visually-hidden" role="status" aria-live="polite"></span>
@@ -235,12 +250,14 @@ page=f'''<!DOCTYPE html>
         <div class="section-heading"><h2 id="about-title">{b('Hi, I’m Xiang.','你好，我是李响。')}</h2></div>
         <div data-audience="research">
         <p class="intro-lead">{b('Building perception that brings robots closer to the real world.','让机器人更好地感知、理解与探索真实世界。')}</p>
-        <div class="about-copy"><p>{b('I am a master’s student in Artificial Intelligence at Dalian University of Technology. My research sits at the intersection of robotics, 3D vision, and embodied AI, with a focus on vision-language navigation, underwater reconstruction and depth estimation, and robust robot perception.','我目前是大连理工大学人工智能专业硕士研究生，研究方向聚焦机器人、三维视觉与具身智能，主要关注视觉语言导航、水下三维重建与深度估计，以及机器人感知的鲁棒性。')}</p>
-        <p>{b('I enjoy connecting algorithms with real robots—from UAV goal planning and humanoid agents to underwater simulation and multi-robot navigation. I have also worked as a research assistant at Peking University and Nanyang Technological University.','我关注从算法到真实机器人的落地，研究与实践涵盖无人机目标规划、人形机器人智能体、水下仿真与多机器人协同导航，也曾在北京大学和南洋理工大学担任科研助理。')}</p></div>
+        <div class="about-copy">
+          <p class="lang-en" lang="en">Xiang Li is a 2025-cohort Master’s student in Artificial Intelligence at the School of Computer Science and Technology, Dalian University of Technology, advised by <a href="https://faculty.dlut.edu.cn/zhuang/zh_CN/index/722579/list/index.htm" target="_blank" rel="noopener noreferrer">Prof. Yan Zhuang</a>. He received the B.Eng. degree in digital media technology from Dalian University of Technology, Dalian, China, in 2025, and is currently pursuing the M.S. degree in artificial intelligence at the Intelligent Robot Laboratory. His current research interests include <strong>Embodied AI</strong>, <strong>Embodied Agent</strong>, <strong>Robotic Perception</strong>, and <strong>Computer Vision</strong>.</p>
+          <p class="lang-zh" lang="zh-CN">李响，大连理工大学计算机科学与技术学院人工智能专业2025级硕士研究生，师从<a href="https://faculty.dlut.edu.cn/zhuang/zh_CN/index/722579/list/index.htm" target="_blank" rel="noopener noreferrer">庄严教授</a>。曾于2025年在大连理工大学获得数字媒体技术工学学士学位，目前正在该校智能机器人实验室攻读人工智能硕士学位。当前的研究方向包括<strong>具身智能</strong>、<strong>具身Agent</strong>、<strong>机器人感知</strong>和<strong>计算机视觉</strong>。</p>
+        </div>
         </div>
         <div data-audience="campus">
-          <p class="intro-lead">{b('Learning and growing through university life.','在科研之外，参与学生工作与校园生活。')}</p>
-          <div class="about-copy"><p>{b('My time at Dalian University of Technology spans undergraduate studies in Digital Media Technology and graduate studies in Artificial Intelligence.','我目前是大连理工大学人工智能专业硕士研究生，本科就读于数字媒体技术专业。本页按研究生与本科阶段列出任职职务、荣誉称号和奖学金。')}</p><p>{b('My university honors include the DUT Outstanding Student Model distinction and the Qu Bochuan Scholarship, alongside recognition for innovation, social practice, organizational service, sports, and the arts.','曾获大连理工大学优秀学生标兵、屈伯川奖学金，并在创新创业、社会实践、组织服务、体育竞技与文化艺术等方面获得奖励。')}</p></div>
+          <p class="intro-lead">{b('Striving for comprehensive development to become a more valuable individual.','力求全面发展，让自己成为一个更有价值的人。')}</p>
+          <div class="about-copy"><p>{b('Xiang Li, a member of the Communist Party of China, is a 2025-cohort master’s student specializing in Artificial Intelligence at the School of Computer Science and Technology, Dalian University of Technology. During his time at the university, he has participated in over a dozen student-led initiatives, received more than 30 scholarships and honorary titles, won over 40 awards in various competitions, and contributed nearly 300 hours to volunteer service.','李响，中共党员，大连理工大学计算机科学与技术学院人工智能专业2025级硕士研究生，在校期间累计参与十余项学生工作，获得三十余项奖学金及荣誉称号，各类竞赛活动获奖四十余项，志愿服务时长近300小时。')}</p></div>
         </div>
         {section_navigation()}
       </section>
@@ -249,18 +266,18 @@ page=f'''<!DOCTYPE html>
       </section>
       <section class="section" id="education">{section_head('education','Education','教育经历')}
         <article class="education-item"><div class="education-meta"><h3>{university('Dalian University of Technology','大连理工大学')}</h3><span class="timeline-date">{b('2025.09 – Present','2025.09 – 至今')}</span></div><p class="education-school">{university('School of Computer Science and Technology','计算机科学与技术学院')}</p><p class="education-degree">{b('Master’s in Artificial Intelligence (Rank: 1 / 197)','硕士 · 人工智能（排名：1 / 197）')}</p></article>
-        <article class="education-item"><div class="education-meta"><h3>{university('Dalian University of Technology','大连理工大学')}</h3><span class="timeline-date">{b('Sep 2021 – Jun 2025','2021.09 – 2025.06')}</span></div><p class="education-school">{university('School of International Information and Software','国际信息与软件学院')}</p><p class="education-degree">{b('Bachelor’s in Digital Media Technology (Rank: 11 / 120)','学士 · 数字媒体技术（排名：11 / 120）')}</p></article>
+        <article class="education-item"><div class="education-meta"><h3>{university('Dalian University of Technology','大连理工大学')}</h3><span class="timeline-date">{b('Sep 2021 – Jun 2025','2021.09 – 2025.06')}</span></div><p class="education-school">{university('School of Software and International School of Information Science and Engineering','软件学院、国际信息与软件学院')}</p><p class="education-degree">{b('Bachelor’s in Digital Media Technology (Rank: 11 / 120)','学士 · 数字媒体技术（排名：11 / 120）')}</p></article>
       </section>
       <section class="section" id="research-experience" data-audience="research">{section_head('flask','Research Experience','科研经历')}<div class="timeline">{''.join(timeline_item(*x) for x in research_experience)}</div></section>
       <section class="section" id="experience" data-audience="research">{section_head('briefcase','Industry Experience','实习经历')}<div class="timeline">{''.join(timeline_item(*x) for x in industry_experience)}</div></section>
       <section class="section" id="academic-services" data-audience="research">{section_head('people','Academic Services','学术任职')}
         <div class="services-grid">
           <article class="service-group"><h3>{icon('people')}{b('Professional Memberships','学会会员')}</h3><ul class="service-list">{''.join(f'<li>{b(*item)}</li>' for item in memberships)}</ul></article>
-          <article class="service-group"><h3>{icon('paper')}{b('Reviewer','审稿人')}</h3><ul class="service-list">{''.join(f'<li>{e(item)}</li>' for item in reviewing)}</ul></article>
+          <article class="service-group"><h3>{icon('paper')}{b('Reviewer','审稿人')}</h3><ul class="service-list">{''.join(f'<li><a href="{e(url)}" target="_blank" rel="noopener noreferrer">{e(name)}</a></li>' for name,url in reviewing)}</ul></article>
         </div>
       </section>
       <section class="section" id="skills" data-audience="research">{section_head('skills','Skills','专业技能')}
-        <div class="skills-grid"><div class="skill-group"><h3>{b('Programming','编程')}</h3><p>Python · C++ · PyTorch</p></div><div class="skill-group"><h3>{b('Robotics & Tools','机器人与工具')}</h3><p>Isaac Sim · MuJoCo · ROS · Qt · Git · Docker</p></div><div class="skill-group"><h3>{b('Languages','语言')}</h3><p>{b('English: CET-4 & CET-6','英语：CET-4、CET-6')}</p></div></div>
+        <div class="skills-grid"><div class="skill-group"><h3>{b('Programming Language','编程语言')}</h3><p>C/C++ · Python · R · SQL</p></div><div class="skill-group"><h3>{b('Framework','编程框架')}</h3><p>PyTorch · PaddlePaddle</p></div><div class="skill-group"><h3>{b('Tools','工具')}</h3><p>Isaac Sim · MuJoCo · ROS · Qt · Git · Docker</p></div><div class="skill-group"><h3>{b('Languages','语言')}</h3><p>{b('Mandarin · English · Japanese · Cantonese','普通话 · 英语 · 日语 · 粤语')}</p></div></div>
       </section>
       <section class="section" id="leadership" data-audience="campus">{section_head('people','Student Leadership','学生工作任职')}
         {tenure_group(('Graduate Studies','研究生阶段'),graduate_roles)}{tenure_group(('Undergraduate Studies','本科阶段'),undergraduate_roles)}
@@ -274,11 +291,11 @@ page=f'''<!DOCTYPE html>
       <section class="section" id="competitions" data-audience="campus">{section_head('medal','Competitions','竞赛经历')}
         <div class="honors-groups">{''.join(competition_group(title,items) for title,items in competition_groups)}</div>
       </section>
-      <section class="section contact-section" id="contact"><p class="section-kicker">LET’S CONNECT</p><div class="contact-heading"><h2>{b('Ideas are better shared.','让想法相遇。')}</h2>{email_widget()}</div><p data-audience="research">{b('Let’s connect on embodied intelligence, robot perception, and 3D vision.','欢迎交流具身智能、机器人感知与三维视觉相关研究。')}</p><p data-audience="campus">{b('Let’s connect on university life and shared interests.','欢迎交流学生工作、校园生活与共同关注的话题。')}</p></section>
+      <section class="section contact-section" id="contact"><p class="section-kicker">{b('Contact','联系方式')}</p><div class="contact-heading"><h2>{b('Ideas are better shared.','让想法相遇。')}</h2>{email_widget()}</div><p data-audience="research">{b('Let’s connect on embodied intelligence, robot perception, and 3D vision.','欢迎交流具身智能、机器人感知与三维视觉相关研究。')}</p><p data-audience="campus">{b('Let’s connect on university life and shared interests.','欢迎交流学生工作、校园生活与共同关注的话题。')}</p></section>
     </main>
   </div>
   <div class="page-ending">
-  <footer class="site-footer shell"><span>© 2026 Xiang Li <span class="brand-dot">/</span> CharlyX</span><p class="footer-note">{b('Look to the stars and dream. Face setbacks undaunted.','仰望星空树理想，直面挫折不彷徨。')}</p><a class="back-top" href="#top">{b('Back to top','返回顶部')} ↑</a></footer>
+  <footer class="site-footer shell"><span class="footer-copyright">{b('© 2026 Xiang Li (CharlyX)','© 2026 李响（CharlyX）')}</span><a class="back-top" href="#top">{b('Back to top','返回顶部')} ↑</a></footer>
   </div>
 </body>
 </html>

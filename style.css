@@ -296,8 +296,11 @@ body[data-view="campus"] [data-audience="research"] { display: none !important; 
 .cv-button svg { width: 15px; height: 15px; }
 .cv-button::before { content: ""; position: absolute; left: 10px; top: -1px; height: 2px; width: 18px; background: var(--cyan); }
 .cv-button:hover { background: #6de6ed17; box-shadow: 0 0 22px #6de6ed12; }
-.profile-motto { margin: 27px 0 0; padding-top: 21px; border-top: 1px solid var(--line); font-size: 13px; color: #b5b4d1; line-height: 1.9; text-shadow: 0 0 22px #a399ed35; }
-.profile-motto .lang-zh { letter-spacing: 1.5px; }
+.profile-motto { margin: 27px 0 0; padding-top: 21px; border-top: 1px solid var(--line); font: 18px/1.85 Cambria, Georgia, "Times New Roman", serif; color: #d6d2f1; text-shadow: 0 0 18px #a399ed45; }
+.profile-motto p { margin-bottom: 0; }
+.profile-motto .motto-line { display: block; }
+.profile-motto .lang-en { font-size: 17px; font-style: italic; letter-spacing: -.35px; }
+.profile-motto .lang-zh { font-family: "STKaiti", "KaiTi", "Kaiti SC", "FangSong", serif; font-size: 19px; letter-spacing: 1.5px; }
 .content { min-width: 0; }
 .profile-view-switch { display: inline-flex; align-items: center; gap: 5px; padding: 4px; margin: 0; border: 1px solid #9db7db30; border-radius: 7px; background: #0b1321b8; }
 .view-button { position: relative; display: inline-flex; align-items: center; gap: 8px; min-height: 38px; padding: 7px 17px; border: 1px solid transparent; border-radius: 4px; color: #a6b7cf; background: transparent; font-size: 13px; font-weight: 500; line-height: 1.5; transition: color .2s, background .2s, border-color .2s; }
@@ -311,7 +314,7 @@ body[data-view="campus"] [data-audience="research"] { display: none !important; 
 .section-heading { margin-bottom: 24px; }
 .section-heading h2 { display: flex; align-items: center; gap: 11px; margin: 0; font-size: 23px; font-weight: 600; letter-spacing: -.35px; }
 .section-heading h2 svg { width: 23px; height: 23px; flex: 0 0 23px; color: var(--cyan); filter: drop-shadow(0 0 8px #6de6ed25); }
-.section-kicker { font: 9px/1.7 var(--mono); color: #7c94ad; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 12px; }
+.section-kicker { font: 12px/1.7 var(--sans); color: #8fb8cc; letter-spacing: 1px; margin: 0 0 12px; }
 .section-heading .section-kicker { margin: 0; }
 #about .section-heading { display: block; }
 #about .section-heading h2 { display: block; }
@@ -410,9 +413,11 @@ body[data-view="campus"] [data-audience="research"] { display: none !important; 
 .service-list { padding: 0; margin: 0; list-style: none; display: grid; gap: 10px; color: #adbed4; font-size: 13px; line-height: 1.8; }
 .service-list li { position: relative; padding-left: 15px; }
 .service-list li::before { content: ""; position: absolute; left: 0; top: .82em; width: 4px; height: 4px; border-radius: 50%; background: #6de6ed88; box-shadow: 0 0 8px #6de6ed20; }
+.service-list a { text-decoration: underline; text-decoration-color: #6de6ed48; text-underline-offset: 4px; transition: color .2s, text-decoration-color .2s; }
+.service-list a:hover, .service-list a:focus-visible { color: var(--cyan); text-decoration-color: var(--cyan); }
 .skills-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 23px 30px; }
 .skills-grid + .about-copy { margin-top: 22px; }
-.skill-group h3 { font: 10px/1.7 var(--mono); text-transform: uppercase; letter-spacing: 1px; color: #8bbecb; margin-bottom: 9px; }
+.skill-group h3 { font: 550 15px/1.35 var(--sans); color: #dfe8f7; margin-bottom: 9px; }
 .skill-group p { font-size: 13px; color: #acbcd2; line-height: 1.9; margin: 0; }
 .contact-section { padding: 27px 0 5px; }
 .contact-section h2 { font-size: 22px; font-weight: 500; margin-bottom: 12px; }
@@ -447,11 +452,20 @@ body[data-view="campus"] [data-audience="research"] { display: none !important; 
 .nightscape-meteor i { position: absolute; left: 60%; top: 15%; width: 120px; height: 1px; opacity: 0; background: linear-gradient(90deg, transparent, #9af7ff); transform: rotate(142deg); filter: drop-shadow(0 0 4px #9af7ff99); animation: meteor-pass 16s ease-out infinite; }
 .nightscape-meteor i:nth-child(2) { left: 85%; top: 25%; width: 75px; animation-delay: 6s; animation-duration: 21s; }
 .nightscape-meteor i:nth-child(3) { left: 39%; top: 10%; width: 90px; animation-delay: 12s; animation-duration: 24s; }
+/* A bilingual inscription belongs to the night sky, beneath the reading layer. */
+.nightscape-quote { position: absolute; z-index: 1; left: max(24px, calc((100vw - 1180px) / 2 - 10px)); bottom: clamp(28px, 5vh, 70px); width: 275px; padding: 18px 0; text-align: center; pointer-events: none; opacity: .6; }
+.nightscape-quote::before, .nightscape-quote::after { content: ""; position: absolute; height: 1px; left: 12%; right: 12%; background: linear-gradient(90deg, transparent, #65e9f4a8, #d295efb0, transparent); box-shadow: 0 0 12px #7eeefb50; }
+.nightscape-quote::before { top: 0; }
+.nightscape-quote::after { bottom: 0; left: 26%; right: 26%; }
+.nightscape-quote > span { display: block; }
+.nightscape-quote .quote-line { display: block; width: fit-content; max-width: 100%; margin-inline: auto; color: #b9eaff; background: linear-gradient(115deg, #71e6ff 5%, #e2faff 30%, #bea3ff 57%, #fa8edc 78%, #71e6ff 100%); background-size: 220% 100%; background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 8px #79cfff75) drop-shadow(0 0 21px #a76fff45); animation: inscription-shimmer 16s ease-in-out infinite alternate; }
+.nightscape-quote .lang-zh { font: 600 29px/1.7 "STKaiti", "KaiTi", "Kaiti SC", "FangSong", serif; letter-spacing: 1.1px; }
+.nightscape-quote .lang-en { font: italic 23px/1.55 Cambria, Georgia, "Times New Roman", serif; letter-spacing: -.3px; }
+@keyframes inscription-shimmer { from { background-position: 0% 50%; } to { background-position: 100% 50%; } }
 @keyframes aurora-drift { from { opacity: .3; transform: translate(-2%, 1%) scale(.98); } to { opacity: .85; transform: translate(2%, -1%) scale(1.04); } }
 @keyframes star-breathe { from { opacity: .2; transform: scale(.75); } to { opacity: .9; transform: scale(1.25); } }
 @keyframes meteor-pass { 0%, 4% { opacity: 0; transform: translate(0, 0) rotate(142deg); } 5% { opacity: .85; } 10% { opacity: 0; transform: translate(-210px, 164px) rotate(142deg); } 100% { opacity: 0; transform: translate(-210px, 164px) rotate(142deg); } }
 .site-footer { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 25px; min-height: 92px; margin-top: -8px; padding: 20px 0; border-top: 1px solid var(--line); color: #8397b0; font-size: 13px; }
-.footer-note { flex: 1; margin: 0; font-size: inherit; font-weight: 500; line-height: 1.9; text-align: center; color: #a9c4d7; letter-spacing: .5px; }
 .back-top { display: inline-flex; align-items: center; gap: 9px; font-size: inherit; line-height: 1.8; white-space: nowrap; }
 .back-top:hover { color: var(--cyan); }
 .back-top svg { width: 14px; height: 14px; }
@@ -470,6 +484,9 @@ body[data-view="campus"] [data-audience="research"] { display: none !important; 
   .research-visual img { height: 103px; }
   .timeline-item { grid-template-columns: 159px minmax(0, 1fr); gap: 17px; }
   .services-grid { gap: 23px; }
+  .nightscape-quote { left: 25px; width: 245px; }
+  .nightscape-quote .lang-zh { font-size: 26px; }
+  .nightscape-quote .lang-en { font-size: 21px; }
 }
 @media (max-width: 900px) {
   .shell { width: calc(100% - 48px); }
@@ -496,6 +513,9 @@ body[data-view="campus"] [data-audience="research"] { display: none !important; 
   .timeline-content { padding-left: 16px; }
   .skills-grid { gap: 20px; }
   .services-grid { grid-template-columns: 1fr; gap: 28px; }
+  .nightscape-quote { left: 19px; width: 215px; }
+  .nightscape-quote .lang-zh { font-size: 23px; }
+  .nightscape-quote .lang-en { font-size: 19px; }
 }
 @media (max-width: 700px) {
   html { scroll-padding-top: 150px; }
@@ -526,7 +546,7 @@ body[data-view="campus"] [data-audience="research"] { display: none !important; 
   .dated-awards li { grid-template-columns: 95px minmax(0, 1fr); gap: 12px; }
   .section-heading { gap: 15px; margin-bottom: 22px; }
   .section-heading h2 { font-size: 22px; }
-  .section-kicker { font-size: 8px; letter-spacing: 1.3px; }
+  .section-kicker { font-size: 12px; letter-spacing: 1px; }
   .intro-lead { font-size: 23px; line-height: 1.5; margin-bottom: 18px; }
   .about-copy { font-size: 14px; line-height: 1.9; }
   .research-list { gap: 29px; }
@@ -540,6 +560,7 @@ body[data-view="campus"] [data-audience="research"] { display: none !important; 
   .timeline-date { padding-top: 1px; }
   .timeline-content { padding-left: 17px; }
   .role-title { font-size: 14px; }
+  .skill-group h3 { font-size: 14px; }
   .organization, .timeline-content p { font-size: 13px; }
   .education-item h3 { font-size: 15px; }
   .education-meta { font-size: 12px; }
@@ -548,9 +569,11 @@ body[data-view="campus"] [data-audience="research"] { display: none !important; 
   .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
   .nightscape::after { background: linear-gradient(180deg, #070b164d 0%, #070b1685 40%, #070b1666 100%); }
   .nightscape-art { height: 76%; min-height: 0; object-position: 32% bottom; opacity: .72; }
+  .nightscape-quote { left: 50%; bottom: 22px; width: min(340px, calc(100% - 40px)); transform: translateX(-50%); padding: 12px 0; opacity: .2; }
+  .nightscape-quote .lang-zh { font-size: clamp(23px, 5vw, 29px); letter-spacing: 1.5px; }
+  .nightscape-quote .lang-en { font-size: 22px; }
   .page-ending { margin-top: 24px; }
   .site-footer { display: grid; grid-template-columns: 1fr auto; min-height: 90px; margin-top: -5px; gap: 15px; font-size: 12px; }
-  .footer-note { grid-column: 1 / -1; grid-row: 1; }
 }
 @media (max-width: 460px) {
   .shell { width: calc(100% - 36px); }
@@ -578,7 +601,9 @@ body[data-view="campus"] [data-audience="research"] { display: none !important; 
   .tenure-date { margin-left: 0; }
   .services-grid { grid-template-columns: 1fr; gap: 27px; }
   .site-footer { align-items: flex-start; }
-  .footer-note { max-width: none; }
+}
+@media (min-width: 701px) and (max-height: 800px) {
+  .nightscape-quote { opacity: .25; bottom: 18px; }
 }
 @media (hover: none) {
   .profile-actions { flex-wrap: wrap; }

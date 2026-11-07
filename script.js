@@ -38,7 +38,7 @@
     const isResearch = currentView === 'research';
     document.title = isEnglish
       ? `Xiang Li | CharlyX · ${isResearch ? 'Research' : 'Campus'}`
-      : `李响 | CharlyX · ${isResearch ? '科研' : '校园经历'}`;
+      : `李响 | CharlyX · ${isResearch ? '科研经历' : '校园经历'}`;
     if (description) {
       description.content = isEnglish
         ? (isResearch
@@ -58,7 +58,7 @@
     if (viewStatus) {
       viewStatus.textContent = isEnglish
         ? `${isResearch ? 'Research' : 'Campus'} view selected`
-        : `已切换至${isResearch ? '科研' : '校园经历'}视图`;
+        : `已切换至${isResearch ? '科研经历' : '校园经历'}视图`;
     }
   }
 
