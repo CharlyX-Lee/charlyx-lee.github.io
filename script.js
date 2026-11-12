@@ -94,7 +94,7 @@
     document.querySelectorAll('[data-label-en][data-label-zh]').forEach((element) => {
       const text = isEnglish ? element.dataset.labelEn : element.dataset.labelZh;
       element.setAttribute('aria-label', text);
-      element.setAttribute('title', text);
+      if (element.hasAttribute('title')) element.setAttribute('title', text);
     });
     languageToggle.textContent = isEnglish ? '中文' : 'EN';
     languageToggle.setAttribute('aria-label', isEnglish ? 'Switch to Chinese' : '切换为英文');

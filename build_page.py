@@ -13,8 +13,9 @@ def b(en, zh):
     return f'<span class="lang-en" lang="en">{e(en)}</span><span class="lang-zh" lang="zh-CN">{e(zh)}</span>'
 def icon(name):
     return f'<svg aria-hidden="true"><use href="#i-{name}"/></svg>'
-def attrs(en, zh):
-    return f'aria-label="{e(en)}" title="{e(en)}" data-label-en="{e(en)}" data-label-zh="{e(zh)}"'
+def attrs(en, zh, tooltip=True):
+    title = f' title="{e(en)}"' if tooltip else ''
+    return f'aria-label="{e(en)}"{title} data-label-en="{e(en)}" data-label-zh="{e(zh)}"'
 def section_head(symbol, en, zh):
     return f'<div class="section-heading"><h2>{icon(symbol)}{b(en,zh)}</h2></div>'
 
@@ -45,9 +46,9 @@ def email_widget():
     </div>'''
 
 def view_switch():
-    return f'''<div class="profile-view-switch" role="group" {attrs('Choose profile view','选择主页版本')}>
-      <button class="view-button" type="button" data-view-select="research" aria-pressed="true">{icon('flask')}{b('Research','科研经历')}</button>
-      <button class="view-button" type="button" data-view-select="campus" aria-pressed="false">{icon('people')}{b('Campus','校园经历')}</button>
+    return f'''<div class="profile-view-switch" role="group" {attrs('Choose profile view','选择主页版本', tooltip=False)}>
+      <button class="view-button" type="button" data-view-select="research" aria-pressed="true" {attrs('Switch to Research','切换为科研经历')}>{icon('flask')}{b('Research','科研经历')}</button>
+      <button class="view-button" type="button" data-view-select="campus" aria-pressed="false" {attrs('Switch to Campus','切换为校园经历')}>{icon('people')}{b('Campus','校园经历')}</button>
     </div>'''
 
 def section_navigation():
@@ -55,8 +56,8 @@ def section_navigation():
         'research': [('research','paper','Publications','论文成果'), ('education','education','Education','教育经历'), ('research-experience','flask','Research Experience','科研经历'), ('experience','briefcase','Industry Experience','实习经历'), ('academic-services','people','Academic Services','学术任职'), ('skills','skills','Skills','专业技能')],
         'campus': [('education','education','Education','教育经历'), ('leadership','people','Student Leadership','学生工作任职'), ('honors','trophy','Honors','荣誉称号'), ('scholarships','education','Scholarships','奖学金'), ('competitions','medal','Competitions','竞赛经历')],
     }
-    links = ''.join(f'<a href="#{target}" data-audience="{view}">{icon(symbol)}{b(en,zh)}</a>' for view, entries in sections.items() for target, symbol, en, zh in entries)
-    return f'<nav class="section-nav" {attrs("On this page","本页导航")}>{links}</nav>'
+    links = ''.join(f'<a href="#{target}" data-audience="{view}" {attrs("Switch to " + en,"切换为" + zh)}>{icon(symbol)}{b(en,zh)}</a>' for view, entries in sections.items() for target, symbol, en, zh in entries)
+    return f'<nav class="section-nav" {attrs("On this page","本页导航", tooltip=False)}>{links}</nav>'
 
 old = (ROOT/'index.html').read_text(encoding='utf-8')
 symbols = re.search(r'<svg class="icon-library".*?</svg>', old, re.S).group(0)
@@ -211,7 +212,7 @@ page=f'''<!DOCTYPE html>
   <title>Xiang Li | CharlyX · Robotics &amp; 3D Vision</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css?v=20261112-soft-sky">
-  <script src="script.js" defer></script>
+  <script src="script.js?v=20261112-hover-labels" defer></script>
 </head>
 <body data-motion="on" data-view="research" id="top">
   <a class="skip-link" href="#about">{b('Skip to CV','跳转到简历')}</a>
@@ -232,7 +233,7 @@ page=f'''<!DOCTYPE html>
     <div class="header-tools"><button id="language-toggle" class="control-button language-button" type="button" aria-label="Switch to Chinese">中文</button><button id="motion-toggle" class="control-button" type="button" aria-pressed="true" {attrs('Toggle motion effects','切换动态效果')}><span class="motion-icon" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="motion-label" data-motion-label>Motion on</span></button></div>
   </header>
   <div class="layout shell">
-    <aside class="profile" {attrs('Profile and contact','个人信息与联系方式')}>
+    <aside class="profile" {attrs('Profile and contact','个人信息与联系方式', tooltip=False)}>
       <div class="profile-art"><div class="orbit" aria-hidden="true"></div><div class="moon-portrait"><img src="assets/moon-wolf.webp" alt="Animated wolf and moon" data-label-en="Animated wolf and moon" data-label-zh="月亮与狼的动态头像" width="320" height="320" fetchpriority="high"></div></div>
       <h1 class="profile-name">Xiang Li <span class="chinese-name">李响</span></h1>
       <p class="nickname">@CharlyX</p>
@@ -240,8 +241,8 @@ page=f'''<!DOCTYPE html>
       <p class="profile-affiliation">{university('Dalian University of Technology','大连理工大学')}</p>
       <p class="profile-location">{b('Dalian, China','中国 · 大连')}</p>
       <p class="profile-mbti">MBTI · ENFJ-T</p>
-      <nav class="social-links" {attrs('Social and academic profiles','社交与学术主页')}>{social_html}</nav>
-      <div class="profile-actions"><a id="cv-preview" class="cv-button" href="cv.html?lang=en" target="_blank" rel="noopener" {attrs('View CV in a new tab','在新标签页查看简历')}>{icon('document')}{b('View CV','查看简历')}</a></div>
+      <nav class="social-links" {attrs('Social and academic profiles','社交与学术主页', tooltip=False)}>{social_html}</nav>
+      <div class="profile-actions"><a id="cv-preview" class="cv-button" href="cv.html?lang=en" target="_blank" rel="noopener" {attrs('View CV','查看简历')}>{icon('document')}{b('View CV','查看简历')}</a></div>
       <div class="profile-motto"><p><span class="lang-en" lang="en"><span class="motto-line">Steadfast effort.</span><span class="motto-line">A life lived without complacency.</span></span><span class="lang-zh" lang="zh-CN"><span class="motto-line">一以贯之的努力，</span><span class="motto-line">不得懈怠的人生。</span></span></p></div>
     </aside>
     <main class="content">
