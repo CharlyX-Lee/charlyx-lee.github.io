@@ -459,7 +459,7 @@ body[data-view="campus"] [data-audience="research"] { display: none !important; 
   inset: 0 4%;
   pointer-events: none;
   user-select: none;
-  opacity: .18;
+  opacity: .10;
 }
 .nightscape-quote > span { display: block; height: 100%; }
 .nightscape-quote .quote-line {
@@ -588,7 +588,7 @@ body[data-view="campus"] [data-audience="research"] { display: none !important; 
   .nightscape::after { background: linear-gradient(180deg, #070b164d 0%, #070b1685 40%, #070b1666 100%); }
   .nightscape { --scene-width: min(100vw, 100vh); }
   .nightscape-art { height: 76%; object-position: 32% bottom; opacity: .72; }
-  .nightscape-quote { opacity: .15; }
+  .nightscape-quote { opacity: .08; }
   .nightscape-quote .lang-zh { font-size: calc(var(--scene-width) * .095); letter-spacing: .035em; }
   .nightscape-quote .lang-en { font-size: calc(var(--scene-width) * .0615); }
   .page-ending { margin-top: 24px; }
