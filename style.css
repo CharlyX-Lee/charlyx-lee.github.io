@@ -452,15 +452,36 @@ body[data-view="campus"] [data-audience="research"] { display: none !important; 
 .nightscape-meteor i { position: absolute; left: 60%; top: 15%; width: 120px; height: 1px; opacity: 0; background: linear-gradient(90deg, transparent, #9af7ff); transform: rotate(142deg); filter: drop-shadow(0 0 4px #9af7ff99); animation: meteor-pass 16s ease-out infinite; }
 .nightscape-meteor i:nth-child(2) { left: 85%; top: 25%; width: 75px; animation-delay: 6s; animation-duration: 21s; }
 .nightscape-meteor i:nth-child(3) { left: 39%; top: 10%; width: 90px; animation-delay: 12s; animation-duration: 24s; }
-/* A bilingual inscription belongs to the night sky, beneath the reading layer. */
-.nightscape-quote { position: absolute; z-index: 1; left: max(24px, calc((100vw - 1180px) / 2 - 10px)); bottom: clamp(28px, 5vh, 70px); width: 275px; padding: 18px 0; text-align: center; pointer-events: none; opacity: .6; }
-.nightscape-quote::before, .nightscape-quote::after { content: ""; position: absolute; height: 1px; left: 12%; right: 12%; background: linear-gradient(90deg, transparent, #65e9f4a8, #d295efb0, transparent); box-shadow: 0 0 12px #7eeefb50; }
-.nightscape-quote::before { top: 0; }
-.nightscape-quote::after { bottom: 0; left: 26%; right: 26%; }
-.nightscape-quote > span { display: block; }
-.nightscape-quote .quote-line { display: block; width: fit-content; max-width: 100%; margin-inline: auto; color: #b9eaff; background: linear-gradient(115deg, #71e6ff 5%, #e2faff 30%, #bea3ff 57%, #fa8edc 78%, #71e6ff 100%); background-size: 220% 100%; background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 8px #79cfff75) drop-shadow(0 0 21px #a76fff45); animation: inscription-shimmer 16s ease-in-out infinite alternate; }
-.nightscape-quote .lang-zh { font: 600 29px/1.7 "STKaiti", "KaiTi", "Kaiti SC", "FangSong", serif; letter-spacing: 1.1px; }
-.nightscape-quote .lang-en { font: italic 23px/1.55 Cambria, Georgia, "Times New Roman", serif; letter-spacing: -.3px; }
+/* Oversized calligraphy floats across the sky, beneath the reading layer. */
+.nightscape-quote {
+  position: absolute;
+  z-index: 1;
+  inset: 28% 4% 14%;
+  pointer-events: none;
+  user-select: none;
+  opacity: .18;
+}
+.nightscape-quote > span { display: flex; flex-direction: column; justify-content: space-between; height: 100%; }
+.nightscape-quote .quote-line {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  white-space: nowrap;
+  padding: .1em .08em;
+  color: #b9eaff;
+  background: linear-gradient(115deg, #71e6ff 5%, #e2faff 30%, #bea3ff 57%, #fa8edc 78%, #71e6ff 100%);
+  background-size: 220% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 12px #79cfff65) drop-shadow(0 0 36px #a76fff40);
+  transform: rotate(-5deg);
+  transform-origin: center;
+  animation: inscription-shimmer 16s ease-in-out infinite alternate;
+}
+.nightscape-quote .quote-line:last-child { align-self: flex-end; }
+.nightscape-quote .lang-zh { font: 500 clamp(58px, 7.2vw, 138px)/1.35 "STXingkai", "Xingkai SC", "STKaiti", "KaiTi", "Kaiti SC", "FangSong", serif; letter-spacing: .08em; }
+.nightscape-quote .lang-en { font: italic 500 clamp(39px, 5.7vw, 110px)/1.3 "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif; letter-spacing: -.035em; }
 @keyframes inscription-shimmer { from { background-position: 0% 50%; } to { background-position: 100% 50%; } }
 @keyframes aurora-drift { from { opacity: .3; transform: translate(-2%, 1%) scale(.98); } to { opacity: .85; transform: translate(2%, -1%) scale(1.04); } }
 @keyframes star-breathe { from { opacity: .2; transform: scale(.75); } to { opacity: .9; transform: scale(1.25); } }
@@ -484,9 +505,6 @@ body[data-view="campus"] [data-audience="research"] { display: none !important; 
   .research-visual img { height: 103px; }
   .timeline-item { grid-template-columns: 159px minmax(0, 1fr); gap: 17px; }
   .services-grid { gap: 23px; }
-  .nightscape-quote { left: 25px; width: 245px; }
-  .nightscape-quote .lang-zh { font-size: 26px; }
-  .nightscape-quote .lang-en { font-size: 21px; }
 }
 @media (max-width: 900px) {
   .shell { width: calc(100% - 48px); }
@@ -513,9 +531,6 @@ body[data-view="campus"] [data-audience="research"] { display: none !important; 
   .timeline-content { padding-left: 16px; }
   .skills-grid { gap: 20px; }
   .services-grid { grid-template-columns: 1fr; gap: 28px; }
-  .nightscape-quote { left: 19px; width: 215px; }
-  .nightscape-quote .lang-zh { font-size: 23px; }
-  .nightscape-quote .lang-en { font-size: 19px; }
 }
 @media (max-width: 700px) {
   html { scroll-padding-top: 150px; }
@@ -569,9 +584,9 @@ body[data-view="campus"] [data-audience="research"] { display: none !important; 
   .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
   .nightscape::after { background: linear-gradient(180deg, #070b164d 0%, #070b1685 40%, #070b1666 100%); }
   .nightscape-art { height: 76%; min-height: 0; object-position: 32% bottom; opacity: .72; }
-  .nightscape-quote { left: 50%; bottom: 22px; width: min(340px, calc(100% - 40px)); transform: translateX(-50%); padding: 12px 0; opacity: .2; }
-  .nightscape-quote .lang-zh { font-size: clamp(23px, 5vw, 29px); letter-spacing: 1.5px; }
-  .nightscape-quote .lang-en { font-size: 22px; }
+  .nightscape-quote { inset: 30% 4% 18%; opacity: .15; }
+  .nightscape-quote .lang-zh { font-size: clamp(28px, 9.5vw, 66px); letter-spacing: .035em; }
+  .nightscape-quote .lang-en { font-size: clamp(19px, 6.15vw, 43px); }
   .page-ending { margin-top: 24px; }
   .site-footer { display: grid; grid-template-columns: 1fr auto; min-height: 90px; margin-top: -5px; gap: 15px; font-size: 12px; }
 }
@@ -603,7 +618,7 @@ body[data-view="campus"] [data-audience="research"] { display: none !important; 
   .site-footer { align-items: flex-start; }
 }
 @media (min-width: 701px) and (max-height: 800px) {
-  .nightscape-quote { opacity: .25; bottom: 18px; }
+  .nightscape-quote { top: 27%; bottom: 12%; }
 }
 @media (hover: none) {
   .profile-actions { flex-wrap: wrap; }

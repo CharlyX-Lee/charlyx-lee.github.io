@@ -265,7 +265,7 @@ page=f'''<!DOCTYPE html>
         <div class="research-list">{''.join(research_item(r) for r in research)}</div>
       </section>
       <section class="section" id="education">{section_head('education','Education','教育经历')}
-        <article class="education-item"><div class="education-meta"><h3>{university('Dalian University of Technology','大连理工大学')}</h3><span class="timeline-date">{b('2025.09 – Present','2025.09 – 至今')}</span></div><p class="education-school">{university('School of Computer Science and Technology','计算机科学与技术学院')}</p><p class="education-degree">{b('Master’s in Artificial Intelligence (Rank: 1 / 197)','硕士 · 人工智能（排名：1 / 197）')}</p></article>
+        <article class="education-item"><div class="education-meta"><h3>{university('Dalian University of Technology','大连理工大学')}</h3><span class="timeline-date">{b('Sep 2025 – Present','2025.09 – 至今')}</span></div><p class="education-school">{university('School of Computer Science and Technology','计算机科学与技术学院')}</p><p class="education-degree">{b('Master’s in Artificial Intelligence (Rank: 1 / 197)','硕士 · 人工智能（排名：1 / 197）')}</p></article>
         <article class="education-item"><div class="education-meta"><h3>{university('Dalian University of Technology','大连理工大学')}</h3><span class="timeline-date">{b('Sep 2021 – Jun 2025','2021.09 – 2025.06')}</span></div><p class="education-school">{university('School of Software and International School of Information Science and Engineering','软件学院、国际信息与软件学院')}</p><p class="education-degree">{b('Bachelor’s in Digital Media Technology (Rank: 11 / 120)','学士 · 数字媒体技术（排名：11 / 120）')}</p></article>
       </section>
       <section class="section" id="research-experience" data-audience="research">{section_head('flask','Research Experience','科研经历')}<div class="timeline">{''.join(timeline_item(*x) for x in research_experience)}</div></section>
@@ -277,7 +277,7 @@ page=f'''<!DOCTYPE html>
         </div>
       </section>
       <section class="section" id="skills" data-audience="research">{section_head('skills','Skills','专业技能')}
-        <div class="skills-grid"><div class="skill-group"><h3>{b('Programming Language','编程语言')}</h3><p>C/C++ · Python · R · SQL</p></div><div class="skill-group"><h3>{b('Framework','编程框架')}</h3><p>PyTorch · PaddlePaddle</p></div><div class="skill-group"><h3>{b('Tools','工具')}</h3><p>Isaac Sim · MuJoCo · ROS · Qt · Git · Docker</p></div><div class="skill-group"><h3>{b('Languages','语言')}</h3><p>{b('Mandarin · English · Japanese · Cantonese','普通话 · 英语 · 日语 · 粤语')}</p></div></div>
+        <div class="skills-grid"><div class="skill-group"><h3>{b('Programming Language','编程语言')}</h3><p>C/C++ · Python · R · SQL</p></div><div class="skill-group"><h3>{b('Framework','编程框架')}</h3><p>PyTorch, PaddlePaddle, Qt, LangChain, LangGraph</p></div><div class="skill-group"><h3>{b('Tools','工具')}</h3><p>ROS/ROS2, Isaac Sim, MuJoCo, Git, Docker, Shell</p></div><div class="skill-group"><h3>{b('Languages','语言')}</h3><p>{b('Mandarin · English · Japanese · Cantonese','普通话 · 英语 · 日语 · 粤语')}</p></div></div>
       </section>
       <section class="section" id="leadership" data-audience="campus">{section_head('people','Student Leadership','学生工作任职')}
         {tenure_group(('Graduate Studies','研究生阶段'),graduate_roles)}{tenure_group(('Undergraduate Studies','本科阶段'),undergraduate_roles)}
