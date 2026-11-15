@@ -296,8 +296,9 @@ page=f'''<!DOCTYPE html>
     </main>
   </div>
   <div class="page-ending">
-  <footer class="site-footer shell"><span class="footer-copyright">{b('© 2026 Xiang Li (CharlyX)','© 2026 李响（CharlyX）')}</span><a class="back-top" href="#top">{b('Back to top','返回顶部')} ↑</a></footer>
+  <footer class="site-footer shell"><span class="footer-copyright">{b('© 2026 Xiang Li (CharlyX)','© 2026 李响（CharlyX）')}<br><small><a href="https://developers.cloudflare.com/web-analytics/about/" target="_blank" rel="noopener">{b('Cookie-free analytics by Cloudflare','使用 Cloudflare 进行无 Cookie 访问统计')}</a></small></span><a class="back-top" href="#top">{b('Back to top','返回顶部')} ↑</a></footer>
   </div>
+  <!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{{"token": "c9da6447668148208372b90d1eced323"}}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
 '''

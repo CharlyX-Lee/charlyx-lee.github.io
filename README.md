@@ -38,3 +38,10 @@ Research 依次展示论文成果、教育经历、科研经历、实习经历�
 - [中文 · 科研](https://charlyx-lee.github.io/?view=research&lang=zh-CN)
 - [English · Campus](https://charlyx-lee.github.io/?view=campus&lang=en)
 - [中文 · 校园经历](https://charlyx-lee.github.io/?view=campus&lang=zh-CN)
+
+## 访问统计
+
+登录 [Cloudflare 控制台](https://dash.cloudflare.com/)，在 Web Analytics 中选择 `charlyx-lee.github.io` 查看汇总统计。
+统计覆盖主页与 `cv.html` 简历预览页；直接打开原始 PDF 不会执行统计脚本，因此不计入该统计。
+数据从启用后开始积累，无法补回此前未记录的访问；广告拦截器或网络限制可能导致漏计。
+维护时保留 `index.html`、`build_page.py` 和 `cv.html` 中的 Cloudflare 统计代码。

@@ -35,6 +35,7 @@
     <a id="home-link" href="index.html"><span class="lang-en">← Back to homepage</span><span class="lang-zh">← 返回主页</span></a>
     <a class="pdf-link" href="assets/Xiang-Li-CV.pdf?v=20261115" target="_blank" rel="noopener"><span class="lang-en">Open PDF ↗</span><span class="lang-zh">打开 PDF ↗</span></a>
     <button id="cv-language" type="button" aria-label="Switch to Chinese">中文</button>
+    <a href="https://developers.cloudflare.com/web-analytics/about/" target="_blank" rel="noopener"><span class="lang-en">Cookie-free analytics by Cloudflare</span><span class="lang-zh">使用 Cloudflare 进行无 Cookie 访问统计</span></a>
   </header>
   <main>
     <object class="pdf-viewer" id="cv-document" data="assets/Xiang-Li-CV.pdf?v=20261115#view=FitH" type="application/pdf" aria-label="Xiang Li's CV in Chinese">
@@ -64,5 +65,6 @@
       setLanguage(new URLSearchParams(window.location.search).get('lang') === 'zh-CN' ? 'zh-CN' : 'en');
     })();
   </script>
+  <!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c9da6447668148208372b90d1eced323"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
