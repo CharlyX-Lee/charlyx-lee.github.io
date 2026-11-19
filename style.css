@@ -236,8 +236,8 @@ body[data-view="campus"] [data-audience="research"] { display: none !important; 
 .nickname { color: var(--cyan); font: 12px/1.6 var(--mono); letter-spacing: .7px; margin: 0 0 20px; }
 .profile-role { font-size: 13px; color: #d2dcee; margin: 0 0 3px; }
 .profile-affiliation { font-size: 13px; color: #a6b5cd; margin: 0 0 5px; line-height: 1.75; }
-.profile-affiliation a { text-decoration: underline; text-decoration-color: #a6b5cd40; text-underline-offset: 4px; transition: color .2s, text-decoration-color .2s; }
-.profile-affiliation a:hover { color: var(--cyan); }
+.profile-affiliation a, .profile-mbti a { text-decoration: underline; text-decoration-color: #a6b5cd40; text-underline-offset: 4px; transition: color .2s, text-decoration-color .2s; }
+.profile-affiliation a:hover, .profile-mbti a:hover { color: var(--cyan); }
 .profile-location { font-size: 13px; color: #93a5bf; margin: 0 0 5px; }
 .profile-mbti { font: 13px/1.8 var(--sans); color: #9aabca; margin: 0 0 20px; letter-spacing: .4px; }
 .social-links { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 5px; margin: 21px 0 15px; }
