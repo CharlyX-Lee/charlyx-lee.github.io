@@ -240,7 +240,10 @@ page=f'''<!DOCTYPE html>
       <p class="profile-role">{b("Artificial Intelligence · Master's Student",'人工智能 · 硕士研究生')}</p>
       <p class="profile-affiliation">{university('Dalian University of Technology','大连理工大学')}</p>
       <p class="profile-location">{b('Dalian, China','中国 · 大连')}</p>
-      <p class="profile-mbti">MBTI · <a href="https://www.16personalities.com/ch/档案/be0dfab3f1b93" target="_blank" rel="noopener">ENFJ-A</a></p>
+      <p class="profile-mbti">MBTI ·
+        <a class="lang-en" lang="en" href="https://www.16personalities.com/profiles/be0dfab3f1b93" target="_blank" rel="noopener">ENFJ-A</a>
+        <a class="lang-zh" lang="zh-CN" href="https://www.16personalities.com/ch/档案/be0dfab3f1b93" target="_blank" rel="noopener">ENFJ-A</a>
+      </p>
       <nav class="social-links" {attrs('Social and academic profiles','社交与学术主页', tooltip=False)}>{social_html}</nav>
       <div class="profile-actions"><a id="cv-preview" class="cv-button" href="cv.html?lang=en" target="_blank" rel="noopener" {attrs('View CV','查看简历')}>{icon('document')}{b('View CV','查看简历')}</a></div>
       <div class="profile-motto"><p><span class="lang-en" lang="en"><span class="motto-line">Steadfast effort.</span><span class="motto-line">A life lived without complacency.</span></span><span class="lang-zh" lang="zh-CN"><span class="motto-line">一以贯之的努力，</span><span class="motto-line">不得懈怠的人生。</span></span></p></div>
