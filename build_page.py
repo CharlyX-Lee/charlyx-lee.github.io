@@ -26,6 +26,7 @@ universities = {
     'Nanjing University': ('https://www.nju.edu.cn/en/', 'https://www.nju.edu.cn/'),
     'School of Computer Science and Technology': ('https://cs.dlut.edu.cn/ENGLISH/Home.htm', 'https://cs.dlut.edu.cn/'),
     'School of Software and International School of Information Science and Engineering': ('https://drise.dlut.edu.cn/ywwENGLISH.htm', 'https://drise.dlut.edu.cn/'),
+    'Alibaba Groupa Holding (Amap)': ('https://home.alibabagroup.com/en-US', 'https://home.alibabagroup.com/'),
     'Midea Group (CRC)': ('https://www.midea.com.cn/zh', 'https://www.midea.com.cn/zh'),
     'BIXOCEAN': ('https://bixocean.com/en', 'https://bixocean.com/'),
     'Navi+': ('http://www.navi-plus.com/', 'http://www.navi-plus.com/'),
@@ -133,7 +134,8 @@ def research_item(r):
     </article>'''
 
 def timeline_item(date, role, org):
-    zh_dates = {'Jul 2026':'2026.07','Jan – Mar 2026':'2026.01 – 2026.03','Oct 2025 – May 2026':'2025.10 – 2026.05','Jun – Sep 2026':'2026.06 – 2026.09','Apr – Jun 2026':'2026.04 – 2026.06','Mar 2025 – Apr 2026':'2025.03 – 2026.04'}
+    zh_dates = {'Jul 2026':'2026.07','Jan – Mar 2026':'2026.01 – 2026.03','Oct 2025 – May 2026':'2025.10 – 2026.05',
+                'Nov 2026 – Present':'2026.11 – 至今','Jun – Sep 2026':'2026.06 – 2026.09','Apr – Jun 2026':'2026.04 – 2026.06','Mar 2025 – Apr 2026':'2025.03 – 2026.04'}
     return f'''<article class="timeline-item"><div class="timeline-date">{b(date,zh_dates[date])}</div><div class="timeline-content"><h3 class="role-title">{b(*role)}</h3><p class="organization">{university(*org)}</p></div></article>'''
 
 research_experience = [
@@ -142,6 +144,7 @@ research_experience = [
  ('Oct 2025 – May 2026', ('Research Assistant · Underwater 3D Vision','科研助理 · 水下三维视觉'), ('Peking University','北京大学')),
 ]
 industry_experience = [
+ ('Nov 2026 – Present', ('Embodied Agent Algorithm Engineer','具身Agent算法工程师'), ('Alibaba Groupa Holding (Amap)','阿里巴巴控股集团高德地图')),
  ('Jun – Sep 2026', ('Embodied AI Algorithm Engineer','具身智能算法工程师'), ('Midea Group (CRC)','美的集团（中央研究院）')),
  ('Apr – Jun 2026', ('Embodied AI Algorithm Engineer','具身智能算法工程师'), ('BIXOCEAN','边际领域')),
  ('Mar 2025 – Apr 2026', ('Navigation Algorithm Engineer','导航算法工程师'), ('Navi+','大连航佳机器人')),
