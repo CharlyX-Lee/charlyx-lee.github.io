@@ -150,6 +150,7 @@ industry_experience = [
 competition_groups = [
  (('National Awards','国家级奖项'), [
   ('14th APMCM Asia-Pacific Mathematical Contest in Modeling — National Second Prize','第十四届APMCM亚太地区大学生数学建模竞赛国家二等奖'),
+  ('The 23rd China Postgraduate Mathematical Contest in Modeling (CPMCM) — National Third Prize','“华为杯”第二十三届中国研究生数学建模竞赛国家三等奖'),
   ('14th National College Mathematics Competition — National Third Prize','第十四届全国大学生数学竞赛国家三等奖'),
   ('2024 China Collegiate Computing Contest, AIGC Innovation Competition — National Third Prize','2024年中国高校计算机大赛-AIGC创新赛国家三等奖'),
   ('13th National College Student Digital Media Technology Competition (2026) — National Third Prize','2026年第十三届全国大学生数字媒体科技大赛国家三等奖'),
